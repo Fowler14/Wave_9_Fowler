@@ -17,7 +17,17 @@
 //
 // STEP 2: Test it 3 times with console.log.
 //         Use labels so it’s clear.
-//
+function doubleNumber(n) {
+    console.log(n * 2)
+}
+console.log("Doubled Number");
+doubleNumber(12);
+console.log("Doubled Number");
+doubleNumber(54);
+console.log("Doubled Number");
+doubleNumber(45);
+console.log("Doubled Number");
+doubleNumber(123);
 // ==============================================
 // TASK 2 – “GUARDRAIL” (IF / ELSE INSIDE A FUNCTION)
 // ==============================================
@@ -30,7 +40,19 @@
 //         - Else, return "Not allowed ❌"
 //
 // STEP 5: Test it with ages like 10, 13, 17.
-//
+function canWatchMovie (age) {
+    if (age >= 13) {
+        return "Allowed ✅";
+    } else if (age < 13) {
+        return "Not allowed ❌"; 
+    }
+}
+
+console.log(`You are ${canWatchMovie(10)} to watch the movie`);
+console.log(`You are ${canWatchMovie(13)} to watch the movie`);
+console.log(`You are ${canWatchMovie(17)} to watch the movie`);
+console.log(`You are ${canWatchMovie(28)} to watch the movie`);
+
 // ==============================================
 // TASK 3 – DEFAULT PARAMETER (OPTIONAL INPUT)
 // ==============================================
@@ -46,7 +68,15 @@
 // STEP 8: Test greet() with:
 //         - greet("Maya")
 //         - greet()   (no argument)
-//
+function greet (name = "friend") {
+    return `Hello, ${name}!`; 
+}
+
+console.log(greet("Ryan"));
+console.log(greet("Dave"));
+console.log(greet());
+console.log(greet(undefined));
+
 // ==============================================
 // TASK 4 – ARROW FUNCTION PRACTICE
 // ==============================================
@@ -56,7 +86,17 @@
 //         It returns a - b
 //
 // STEP 10: console.log subtract with a few tests.
-//
+const subtract = (a, b) => {
+    return a - b;
+};
+console.log(subtract(7, 10));
+console.log(subtract(432, 234));
+console.log(subtract(190, -320));
+
+const multiply = (a, b) => {
+    return a * b;
+};
+console.log(multiply(23 ,90));
 // ==============================================
 // TASK 5 – CALLBACK MINI (FUNCTION AS AN ARGUMENT)
 // ==============================================
@@ -76,7 +116,15 @@
 //
 //  Hint: You can pass arrow functions like:
 // (x, y) => x + y
-//
+function doMath(a, b, operation) {
+    return operation(a, b);
+}
+
+const result = doMath(40, 40, (a, b) => a + b);
+console.log(result)
+
+const result2 = doMath(34, 43, (a, b) => a * b);
+console.log(result2)
 // ==============================================
 // TASK 6 – “REAL LIFE” MINI: TAX CALCULATOR
 // ==============================================
@@ -95,3 +143,11 @@
 //          addTax(100, 16)
 //          addTax(59.99, 8)
 //
+function addTax(price, taxRatePercent) {
+    convert = taxRatePercent / 100;
+    finalPrice = (price * convert) + price;
+    return "$" + finalPrice.toFixed(2);
+}
+
+console.log(`Final Price after tax: ${addTax(100,16)}`);
+console.log(`Final Price after tax: ${addTax(599.99,19)}`);
