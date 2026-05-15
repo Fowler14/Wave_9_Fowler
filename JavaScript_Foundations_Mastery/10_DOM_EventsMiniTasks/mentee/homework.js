@@ -18,7 +18,17 @@
 //         - The "+1" button (id "incrementBtn")
 //         - The text input (id "previewInput")
 //         - The preview span (id "previewText")
-//
+
+const mainCard = document.getElementById("eventCard");
+const cardTitle = document.getElementById("cardTitle");
+const description = document.getElementById("cardDescription");
+const changeTitleBtn = document.getElementById("changeTitleBtn");
+const toggleHighlightBtn = document.getElementById("toggleHighlightBtn");
+const counterValue = document.getElementById("counterValue");
+const incrementBtn = document.getElementById("incrementBtn");
+const previewInput = document.getElementById("previewInput");
+const previewText = document.getElementById("previewText");
+
 // STEP 2: (Optional) console.log some of these variables to make
 //         sure you selected them correctly.
 
@@ -33,6 +43,12 @@
 //         - (Optional) Also update the description to mention that
 //           the title was changed by clicking the button.
 
+changeTitleBtn.addEventListener("click", () => {
+    cardTitle.innerText = "Wave 9 DOM Mini Events!";
+    description.innerText = "Title was changed with the button.";
+});
+
+
 // ==============================================
 // TASK 3 – CLICK EVENT: TOGGLE HIGHLIGHT CLASS
 // ==============================================
@@ -41,26 +57,40 @@
 //         Inside the event listener function:
 //         - Use classList.toggle("event-card-highlight") on the main card.
 //           This should add/remove the highlight effect each time you click.
-
+toggleHighlightBtn.addEventListener("click", () => {
+    eventCard.classList.toggle("event-card-highlight");
+});
 // ==============================================
 // TASK 4 – CLICK EVENT: COUNTER +1
 // ==============================================
 //
 // STEP 5: Create a variable (for example, counterValue) and set it
 //         equal to the starting value of the counter (0).
-//
+counter = 0;
+
 // STEP 6: Add a "click" event listener to the "+1" button.
 //         Inside the event listener function:
 //         - Increase the counter variable by 1.
 //         - Update the textContent of the counter span in the page
 //           so it always shows the current count.
-
+incrementBtn.addEventListener("click", () => {
+    counter += 1;
+    counterValue.textContent = counter;
+});
 // ==============================================
 // TASK 5 – INPUT EVENT: LIVE PREVIEW
 // ==============================================
 //
 // STEP 7: Add an "input" event listener to the text input.
-//
+previewInput.addEventListener("input", () => {
+    const textInput = previewInput.value;
+
+    if (textInput === "") {
+        previewText.textContent = "Nothing typed yet.";
+    } else {
+        previewText.textContent = textInput;
+    }
+});
 // STEP 8: Inside the event listener function:
 //         - Read the current value from the input (using .value).
 //         - If the value is an empty string, set the preview text
