@@ -66,5 +66,29 @@
     <!-- STEP 13 — Link JavaScript -->
     <!-- Add a <script> tag at the bottom of the body -->
     <!-- src="homework.js" -->
+
+    <main class="card">
+      <h1>Favorite Quote Saver</h1>
+      <p class="subtitle">The quote will be saved and will still be there after refresh.</p>
+      <div class="field">
+      <label for="quoteInput"></label>
+      <input 
+        type="text" 
+        class="textarea" 
+        id="quoteInput"
+        placeholder="Enter Quote Here..."
+      />
+      </div>
+      <div class="button-row">
+        <button class="btn primary" id="saveQuoteBtn">Save Quote</button>
+        <button class="btn ghost" id="clearQuoteBtn">Clear Quote</button>
+      </div>
+      <div class="display-block">
+        <h2>Saved Quote</h2>
+        <p class="quote-display" id="quoteDisplay">Quote: </p>
+        <p class="hint">We are going to save information to local storage.</p>
+      </div>
+    </main>
+    <script src="homework.js"></script>
   </body>
 </html>
